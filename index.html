@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mon site web ES6</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Site Twitter(X) version ES6</title>
 </head>
 <body>
-<script src="javascripts/Main.js"></script>
+    <div class="container">
+        <div class="sidebar">                   <!--Section de la colonne de droite contenant des hyper liens vers les page Communaute, Tendance et marketplace-->
+            <ul>
+                <li><a href="communaute.html">Communauté</a></li>
+                <li><a href="tendance.html">Tendance</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+            </ul>
+        </div>
+        <div class="input-area">                <!--TODO__________Section centrale pour tweeter, le liens pour publish le tweet ne fonctionne pas tout a fait encore-->
+            <img id="logo-above-input" src="logo.jpg" height="=400" width="400" alt="Logo au-dessus de l'input">
+            <h1>Réseau des Anthos</h1>
+            <input type="text" id="tweet-input" placeholder="Anthos's Tweet in your mind">
+            <button id="tweet-button">Tweeteleteleter</button>
+        </div>
+        <div class="links-area">                <!--TODO_________Creer Les Liens Avec Les Autres Pages___Section de droite pour contenir les favoris, nouvelles et pubs(Damn pub they want our money-->
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=frxdF7N_rlA" id="Demenagement_La_Capitale">Publicité</a></li>
+                <li><a href="favoris.html">Favoris</a></li>
+                <li><a href="nouvelles.html">Dernières Nouvelles</a></li>
+            </ul>
+        </div>
+        <div id="tweet-list">
+            
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
