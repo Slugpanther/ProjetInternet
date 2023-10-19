@@ -20,6 +20,9 @@
             <h1>Réseau des Anthos</h1>
             <input type="text" id="tweet-input" placeholder="Anthos's Tweet in your mind">
             <button id="tweet-button">Tweeteleteleter</button>
+            <audio id="backgroundMusic">
+                <source src="Never.wav" type="audio/wav">           <!--Desole pour le vers d'oreille!!!!!!-->
+              </audio>
         </div>
         <div class="links-area">                <!--TODO_________Creer Les Liens Avec Les Autres Pages___Section de droite pour contenir les favoris, nouvelles et pubs(Damn pub they want our money-->
             <ul>
@@ -32,6 +35,23 @@
             
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var tweetbutton = document.getElementById("tweet-button");
+          var backgroundMusic = document.getElementById("backgroundMusic");
+      
+          tweetbutton.addEventListener("click", function() {
+            if (backgroundMusic.paused) {
+              backgroundMusic.play();
+              tweetbutton.textContent = "Arret"; // Change le texte pour "pause"
+            } else {
+              backgroundMusic.pause();
+              tweetbutton.textContent = "Tweeteleteleter"; // Ramene a Tweeteleteleter
+            }
+          });
+        });
+      </script>
+      
     <script src="main.js" type="module"></script>
 </body>
 </html>
