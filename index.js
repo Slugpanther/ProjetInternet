@@ -18,10 +18,11 @@ app.get('/',(req,res)=>{
 
 io.on('connection', (socket)=>{
     console.log('Un client connecté');
+    socket.on('disconnect', ()=>{
+        console.log('Client est offline now');
+    })
 })
-io.off('disconnect', ()=>{
-    console.log('Client est offline now');
-})
+
 
 
 
