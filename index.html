@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <title>Ma Page Web Élégante</title>
     <link rel="stylesheet" href= "style.css">
+    <script src="socket.io/socket.io.js"></script>
+    <script>var socket=io(); 
+    var messages=document.getElementById('message');
+    var form=document.getElementById('form');
+    var input=document.getElementById('input');
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        if (input.value) {
+            socket.emit('message',input.value);
+            input.value='';
+        }
+    });
+    
+    socket.on('message', function(msg) {
+          var item = document.createElement('li');
+          item.textContent = msg;
+          messages.appendChild(item);
+          window.scrollTo(0, document.body.scrollHeight);
+    });
+
+</script>
+    </script>
     
 </head>
 <body>
@@ -21,6 +44,10 @@
     <section>
         <h2>Section principale</h2>
         <p>Ceci est le contenu principal de ma page web.</p>
+        <form id="formulaire" action="">
+            <input type="text" id="message" placeholder="Entrez votre message ici">
+            <button type="submit">Envoyer</button>
+        </form>    
     </section>
  
     <footer>
