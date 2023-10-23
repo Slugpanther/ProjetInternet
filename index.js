@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const { dirname } = require('path');
+const {Server} = require("socket.io");
 const server = http.createServer(app);
 const io= new Server(server, {
     cors:{
@@ -18,7 +19,7 @@ app.get('/',(req,res)=>{
 io.on('connection', (socket)=>{
     console.log('Un client connecté');
 })
-socket.on('disconnect', ()=>{
+io.off('disconnect', ()=>{
     console.log('Client est offline now');
 })
 
