@@ -11,6 +11,7 @@ const io= new Server(server, {
     }
 
 });
+app.use('/CSS', express.static(__dirname + '/CSS'));
 
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html');
